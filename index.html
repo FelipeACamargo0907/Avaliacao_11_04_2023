@@ -10,7 +10,7 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="p-3 text-primary-emphasis bg-primary-subtle">
     <div class="container">
 
         <div class="row justify-content-center">
@@ -20,32 +20,34 @@
 
                     <b>Cotação Hoje:</b><br><br>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">$</span>
+                        <span class="input-group-text" id="inputGroup-sizing-default">Dólar</span>
                         <input type="number" class="form-control" id="dolar" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default">
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">€</span>
+                        <span class="input-group-text" id="inputGroup-sizing-default">Euro</span>
                         <input type="number" class="form-control" id="euro" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default">
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-default">£</span>
+                        <span class="input-group-text" id="inputGroup-sizing-default">Libras</span>
                         <input type="number" class="form-control" id="libras" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default">
                     </div><br>
 
                     <div class="input-group mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-default">R$</span>
                         <input id="real" type="number" class="form-control" placeholder="Valor em Reais:"
-                            aria-label="Digite o Valor:" aria-describedby="button-addon2">
+                            aria-label="Digite o Valor:" aria-describedby="button-addon2" value="1.00">
                         <button class="btn btn-secondary" type="button" id="button-addon2"
                             onclick="Conversor()">Converter</button>
                     </div>
                 </div>
-                <div class="card p-3 text-info-emphasis -emphasis bg-info-subtle border border-primary-emphasis-subtle rounded-3">
-                    <div class="card-header text-center"><b>Valor Convertido:</b></div>
+                <div
+                    class="card p-3 text-light-emphasis -emphasis bg-light-subtle border border-emphasis-subtle rounded-3">
+                    <div class="card-header text-center"><b>Valores:</b></div>
                     <div class="card-body">
-                        <b class="card-text" id="resultado">Dolar: <br> Euro: <br> Libras: </b>
+                        <b class="card-text" id="resultado">$   <br> €<br> £</b>
                     </div>
                 </div>
             </div>
@@ -61,9 +63,9 @@
 
             var resultado = document.getElementById("resultado");
 
-            resultado.innerText = "Dolar: " + (real / dolar).toFixed(4)
-                + "\n" + "Euro: " + (real / euro).toFixed(4)
-                + "\n" + "Libras: " + (real / libra).toFixed(4);
+            resultado.innerText = "$ " + (real / dolar).toFixed(4)
+                + "\n" + "€ " + (real / euro).toFixed(4)
+                + "\n" + "£ " + (real / libra).toFixed(4);
         }
     </script>
 
