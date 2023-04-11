@@ -12,50 +12,56 @@
 
 <body>
     <div class="container text-center">
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-4">
 
-            <h1>Conversor de Real</h1><br>
+        <div class="row justify-content-center">
+            <div class="col-4">
 
-            <label>Cotação Hoje:</label><br><br>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">$</span>
-                <input type="number" class="form-control" id="dolar" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">€</span>
-                <input type="number" class="form-control" id="euro" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">£</span>
-                <input type="number" class="form-control" id="libras" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div><br>
+                <h1>Conversor de Real</h1><br>
 
-            <div class="input-group mb-3">
-                <input id="real" type="number" class="form-control" placeholder="Valor em Reais:"
-                    aria-label="Digite o Valor:" aria-describedby="button-addon2">
-                <button class="btn btn-secondary" type="button" id="button-addon2"
-                    onclick="Conversor()">Converter</button>
-            </div>
+                <label>Cotação Hoje:</label><br><br>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">$</span>
+                    <input type="number" class="form-control" id="dolar" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">€</span>
+                    <input type="number" class="form-control" id="euro" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">£</span>
+                    <input type="number" class="form-control" id="libras" aria-label="Sizing example input"
+                        aria-describedby="inputGroup-sizing-default">
+                </div><br>
 
-            <div id="divResult"
-                class="p-3 text-info-emphasis -emphasis bg-info-subtle border border-primary-emphasis-subtle rounded-3">
-                <b>Resultado:</b><br>
-                <span class="text-align" id="resultado"></span>
+                <div class="input-group mb-3">
+                    <input id="real" type="number" class="form-control" placeholder="Valor em Reais:"
+                        aria-label="Digite o Valor:" aria-describedby="button-addon2">
+                    <button class="btn btn-secondary" type="button" id="button-addon2"
+                        onclick="Conversor()">Converter</button>
+                </div>
+
+                <div id="divResult"
+                    class="p-3 text-info-emphasis -emphasis bg-info-subtle border border-primary-emphasis-subtle rounded-3">
+                    <b class="text-align" id="resultado"></b>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
         function Conversor() {
-            var dolar = document.getElementById("dolar");            
-            var euro = document.getElementById("");
-            var libra = document.getElementById("");
+            var dolar = parseFloat(document.getElementById("dolar").value);
+            var euro = parseFloat(document.getElementById("euro").value);
+            var libra = parseFloat(document.getElementById("libras").value);
+            var real = parseFloat(document.getElementById("real").value);
 
+            var resultado = document.getElementById("resultado");
+
+            resultado.innerText = "\n" + "Dolar: " + (real / dolar).toFixed(4)
+                                + "\n" + "Euro: " + (real / euro).toFixed(4)
+                                + "\n" + "Libras" + (real / libra).toFixed(4);
         }
     </script>
 
